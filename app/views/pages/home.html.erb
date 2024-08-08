@@ -1,0 +1,5 @@
+<%= button_to 'create new session', sessions_path %>
+
+<% @sessions.each do |session| %>
+  <%= session.uuid %>
+<% end %>
