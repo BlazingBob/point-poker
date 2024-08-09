@@ -3,6 +3,6 @@
 class UsersController < ApplicationController
   def create
     @user = User.new
-    nil unless @user.save
+    @user.save!
   end
 end
