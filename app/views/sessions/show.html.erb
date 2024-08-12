@@ -1,3 +1,7 @@
 <%= render 'form', user: @user, session_id: @session.id %>
 
 <%= @session.uuid %>
+
+<% @users.each do |user| %>
+  <%= user.name %>
+<% end %>
