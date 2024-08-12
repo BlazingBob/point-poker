@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
 
   def create
     @session = Session.new
-    if @session.save!
+    if @session.save
       redirect_to session_path(@session), notice: 'Session created successfully'
     else
       render :home, alert: 'Failed to create session'
