@@ -1,5 +1,8 @@
-<% flash.each do |key, message| %>
-  <div class="<%= flash_class(key) %>">
-    <%= message %>
-  </div>
-<% end %>
+<div id="flash">
+  <% flash.each do |key, content| %>
+    <% next unless key.present? && content.present? && content.is_a?(String) %>
+      <%= tag.div(class: "#{flash_class(key)} flex justify-between items-center", role: :alert) do %>
+        <span><%= content.html_safe %></span>
+      <% end %>
+  <% end %>
+</div>
