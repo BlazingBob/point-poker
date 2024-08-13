@@ -1,5 +1,7 @@
 <%# locals: (user:, session_id:) -%>
-<%= form_with model: user, url: users_path(session_id:) do |f| %>
-  <%= f.text_field :name %>
-  <%= f.submit "Add User" %>
+<%= form_with model: user, url: users_path(session_id: session_id), local: true, html: { class: "flex items-center justify-center" } do |f| %>
+  <div class="mr-2">
+    <%= f.text_field :name, class: "form-input rounded-lg shadow-sm", placeholder: "Enter user name" %>
+  </div>
+  <%= f.submit "Join", class: "px-4 py-2 text-sm font-medium text-white rounded-lg bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800" %>
 <% end %>

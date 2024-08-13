@@ -1,7 +1,13 @@
-<%= render 'form', user: @user, session_id: @session.id %>
-
-<%= @session.uuid %>
-
-<% @users.each do |user| %>
-  <%= user.name %>
-<% end %>
+<section class="flex items-center h-screen bg-gray-50 dark:bg-gray-900">
+    <div class="w-full max-w-screen-xl px-4 mx-auto lg:px-12">
+      <div class="relative overflow-hidden bg-white shadow-md dark:bg-gray-800 sm:rounded-lg">
+        <div class="flex-row items-center justify-between p-4 space-y-3 sm:flex sm:space-y-0 sm:space-x-4">
+          <div>
+            <h5 class="mr-3 font-semibold dark:text-white">Join Session</h5>
+            <p class="text-gray-500 dark:text-gray-400">Enter your name start voting</p>
+          </div>
+          <%= render 'form', user: @user, session_id: @session.id %>
+        </div>
+      </div>
+    </div>
+</section>
