@@ -2,7 +2,7 @@
 
 class SessionsController < ApplicationController
   def show
-    @session = Session.find(params[:id])
+    @session = Session.find_by(uuid: params[:id])
     @users = @session.users
     @user = User.new
   end

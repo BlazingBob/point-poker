@@ -7,4 +7,8 @@ class Session < ApplicationRecord
   def create_uuid
     self.uuid = SecureRandom.uuid
   end
+
+  def to_param
+    uuid
+  end
 end
