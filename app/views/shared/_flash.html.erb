@@ -1,4 +1,4 @@
-<div id="flash">
+<div id="flash" class="mx-2">
   <% flash.each do |key, content| %>
     <% next unless key.present? && content.present? && content.is_a?(String) %>
       <%= tag.div(class: "#{flash_class(key)} flex justify-between items-center", role: :alert) do %>
